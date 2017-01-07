@@ -151,6 +151,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一-GIT"><a href="#一-GIT" class="headerlink" title="一.GIT"></a>一.GIT</h1><h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h2><p> <strong>git</strong> 分布式的源代码版本管理工具</p>
+<h2 id="源码是什么？"><a href="#源码是什么？" class="headerlink" title="- 源码是什么？"></a>- 源码是什么？</h2><pre><code>-在一个项目中，凡是由开发人员编写的代码都算是源代码。
+</code></pre><h2 id="源代码为什么要管理起来？"><a href="#源代码为什么要管理起来？" class="headerlink" title="- 源代码为什么要管理起来？"></a>- 源代码为什么要管理起来？</h2><p>  -让代码可以被追溯，主要记录每次变更了什么，谁主导了这次的变化。协同开发，人为的维护比较麻烦。</p>
+<h2 id="git是谁做的？"><a href="#git是谁做的？" class="headerlink" title="- git是谁做的？"></a>- git是谁做的？</h2><p>  -Git是linux之父（Linus Torvalds, 被誉为“活着的传奇”）为了维护管理Linux源码写的一个工具。<br>  -git之前很多使用svn, vss, tfs, hs…..</p>
+<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p>安装相关的git客户端（命令行的）<br>安装界面化的git客户端SourceTress(tortoisegit, smartgit)</p>
+<h3 id="这里将只介绍命令行的安装"><a href="#这里将只介绍命令行的安装" class="headerlink" title="- 这里将只介绍命令行的安装"></a>- 这里将只介绍命令行的安装</h3><p> <img src="./1483679382320.png" alt="Alt text"></p>
+<p><img src="./1483679398446.png" alt="Alt text"></p>
+<p><img src="./1483679530766.png" alt="Alt text"></p>
+<p><img src="./1483679700750.png" alt="Alt text"></p>
+<p><img src="./1483679771269.png" alt="Alt text"></p>
+<p><img src="./1483679830622.png" alt="Alt text"></p>
+<h3 id="以管理员身份打开cmd，"><a href="#以管理员身份打开cmd，" class="headerlink" title="以管理员身份打开cmd，"></a>以管理员身份打开cmd，</h3><h3 id="输入-git"><a href="#输入-git" class="headerlink" title="输入  git"></a>输入  git</h3><pre><code>### git --servsion 检查git是否安装成功
+</code></pre><h2 id="git-命令清单"><a href="#git-命令清单" class="headerlink" title="git 命令清单"></a>git 命令清单</h2><p><img src="./1483680183276.png" alt="Alt text"></p>
+<h2 id="git的简单使用"><a href="#git的简单使用" class="headerlink" title="git的简单使用"></a>git的简单使用</h2><h3 id="使用git-init-初始化一个本地仓库"><a href="#使用git-init-初始化一个本地仓库" class="headerlink" title="使用git init 初始化一个本地仓库"></a>使用git init 初始化一个本地仓库</h3><ul>
+<li>在本地文件夹中添加一个.git文件夹， 用于记录项目所有的变更信息。<h3 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h3></li>
+<li>用于查看本地仓库的变更状态。第一次查看会显示未被跟踪的文件。</li>
+<li>-s 参数: 输出简要的变更日志。<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add ."></a>git add .</h3></li>
+<li>将没有被跟踪的文件添加到跟踪列表（git add –all）<h3 id="本地忽略清单"><a href="#本地忽略清单" class="headerlink" title="本地忽略清单"></a>本地忽略清单</h3></li>
+<li>在.gitignore文件中添加相应的忽略清单  如：node modules   /min<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3></li>
+<li>git commit 将本地的变化提交到本地的仓库文件夹归档</li>
+<li>git commit -m  “说明” （b必须you提交的日志）<h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3></li>
+<li>git config –global user.email”you@example.com”</li>
+<li>git config –global user.name”your name”<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3></li>
+<li>比较当前文件和文件的状态<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3></li>
+<li>git log -p </li>
+<li>查看当前所有的提交<h3 id="git-reset-–hard”哈希值”"><a href="#git-reset-–hard”哈希值”" class="headerlink" title="git reset –hard”哈希值”"></a>git reset –hard”哈希值”</h3></li>
+<li>将代码回归到之前的某个版本<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><code>总结</code></h2></li>
+<li>git 不需要服务器，但是协同开发时需要</li>
+<li>git服务器，用来同步本地的代码仓库</li>
+<li>git 是一个工具，github是一个网站（提供了远程仓库的功能）</li>
+<li>github网站提供的就是git服务（免费的服务，但是你提交的代码必须是开源的）<br>#二.GitHub<h2 id="github基本介绍"><a href="#github基本介绍" class="headerlink" title="github基本介绍"></a>github基本介绍</h2>  (<a href="https://github.com" target="_blank" rel="external">https://github.com</a>)</li>
+<li>github是一个git服务的提供商（提出社交化编程）<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2></li>
+<li>在github中创建一个账户，并且创建一个空的远程仓库</li>
+<li><img src="./1483719440144.png" alt="Alt text"><h2 id="远程提交"><a href="#远程提交" class="headerlink" title="远程提交"></a>远程提交</h2><h4 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h4><h4 id="git-remote-add-origin-git-github-com-caocaolin-aaaa-git"><a href="#git-remote-add-origin-git-github-com-caocaolin-aaaa-git" class="headerlink" title="git remote add origin git@github.com:caocaolin/aaaa.git"></a>git remote add origin git@github.com:caocaolin/aaaa.git</h4><h4 id="git-push-u-origin-master"><a href="#git-push-u-origin-master" class="headerlink" title="git push -u origin master"></a>git push -u origin master</h4></li>
+</ul>
+<h4 id="git-remote-rm-origin-删除远程仓库信息"><a href="#git-remote-rm-origin-删除远程仓库信息" class="headerlink" title="git remote rm origin(删除远程仓库信息)"></a>git remote rm origin(删除远程仓库信息)</h4><h2 id="远程拉取"><a href="#远程拉取" class="headerlink" title="远程拉取"></a>远程拉取</h2><h4 id="git-clone-（克隆相关的代码）"><a href="#git-clone-（克隆相关的代码）" class="headerlink" title="git clone （克隆相关的代码）"></a>git clone （克隆相关的代码）</h4><h4 id="git-pull-origin-master-（拉取最新的代码）"><a href="#git-pull-origin-master-（拉取最新的代码）" class="headerlink" title="git pull origin master （拉取最新的代码）"></a>git pull origin master （拉取最新的代码）</h4><h3 id="需要注意的是重新推入前要先拉取最新的代码"><a href="#需要注意的是重新推入前要先拉取最新的代码" class="headerlink" title="需要注意的是重新推入前要先拉取最新的代码"></a><code>需要注意的是重新推入前要先拉取最新的代码</code></h3><h1 id="GitHub-页面的其他的功能"><a href="#GitHub-页面的其他的功能" class="headerlink" title="GitHub 页面的其他的功能"></a>GitHub 页面的其他的功能</h1><h2 id="gist"><a href="#gist" class="headerlink" title="gist"></a>gist</h2><ul>
+<li>保留代码片段<h2 id="git分支"><a href="#git分支" class="headerlink" title="git分支"></a>git分支</h2></li>
+<li>git branch  <code>查看分支</code></li>
+<li>git branch ”分支名称“  <code>添加分支</code></li>
+<li>git chexkout v2 <code>切换到相应的分支</code></li>
+<li><p>git push -u origin v2 <code>推入到该分支</code></p>
+<h2 id="托管页面"><a href="#托管页面" class="headerlink" title="托管页面"></a>托管页面</h2></li>
+<li><p>分支名必须是 <code>gh-pages</code></p>
+<h2 id="hexo工具"><a href="#hexo工具" class="headerlink" title="hexo工具"></a>hexo工具</h2><h3 id="1-使用npm安装hexo"><a href="#1-使用npm安装hexo" class="headerlink" title="1.使用npm安装hexo"></a>1.使用npm安装hexo</h3></li>
+<li>npm install -g hexo<h3 id="2-初始化hexo"><a href="#2-初始化hexo" class="headerlink" title="2.初始化hexo"></a>2.初始化hexo</h3></li>
+<li>hexo init blog<h3 id="3-生成静态页面"><a href="#3-生成静态页面" class="headerlink" title="3.生成静态页面"></a>3.生成静态页面</h3></li>
+<li>hexo generate <h3 id="4-启动本地服务，进行文件预览调试"><a href="#4-启动本地服务，进行文件预览调试" class="headerlink" title="4.启动本地服务，进行文件预览调试"></a>4.启动本地服务，进行文件预览调试</h3></li>
+<li>hexo server<h3 id="5-修改-blog文件夹里面的-config-yml文件"><a href="#5-修改-blog文件夹里面的-config-yml文件" class="headerlink" title="5.修改 blog文件夹里面的 _config.yml文件"></a>5.修改 blog文件夹里面的 _config.yml文件</h3></li>
+</ul>
+<p>// _config.yml的最底部的改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:caocaolin/my_blog.git</div><div class="line">  branch: gh-pages</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//更改root</div><div class="line"># URL</div><div class="line"></div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://yoursite.com</div><div class="line">root: /my_blog</div></pre></td></tr></table></figure>
+<p>##6.下载安装hexo-deployer-git</p>
+<ul>
+<li>npm install hexo-deployer-git –save<br>##7.发布到github上</li>
+<li>hexo deploy –generate<h3 id="注意-打开网站会出现乱掉的情况，由于需要配置相应的路径"><a href="#注意-打开网站会出现乱掉的情况，由于需要配置相应的路径" class="headerlink" title="**注意** : 打开网站会出现乱掉的情况，由于需要配置相应的路径"></a><code>**注意** : 打开网站会出现乱掉的情况，由于需要配置相应的路径</code></h3></li>
+<li>修改_config.yml文件</li>
+<li>root:/blog</li>
+<li>重新发布</li>
+<li>hexo clean </li>
+<li>hexo d g<br>##怎样更换yilia主题头像<br><strong>首先找到G:\my_blog\blog\themes\yilia\source\img 把你要替换的头像放到该文件夹下，再找到G:\my_blog\blog\themes\yilia\layout_partial下面的left-col.ejs,用编辑器打开对如下进行编辑，再上传即可</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">把&lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot;&gt;改为</div><div class="line">        &lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot; style=&quot;width: 100%;height: 100%;opacity: 1;&quot;&gt;</div></pre></td></tr></table></figure>
+<p>##怎样切换yilia左侧头部背景<br> <strong>G:\my_blog\blog\themes\yilia\layout_partial下面的left-col.ejs 的 &lt;% var defaultBg = ‘#99D9EA’; %&gt;</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> &lt;div class=&quot;overlay&quot; style=&quot;background: &lt;%= theme.style &amp;&amp; theme.style.header ? theme.style.header : defaultBg %&gt;&quot;&gt;&lt;/div&gt;  </div><div class="line">模板里面的内容更改需要的颜色</div><div class="line"> G:\my_blog\blog\themes\yilia 下的 ——config.yml   style:  header更改为需要的颜色</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/my_blog/2017/01/07/git/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-demo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
