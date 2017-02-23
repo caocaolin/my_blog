@@ -151,6 +151,176 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Angular和React比较" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/21/Angular和React比较/">Angular 和 React 比较</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/21/Angular和React比较/" class="archive-article-date">
+  	<time datetime="2017-02-21T09:36:37.864Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angular的优缺点："><a href="#Angular的优缺点：" class="headerlink" title="Angular的优缺点："></a>Angular的优缺点：</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li><p>Angular是一套完整的框架，angular有自带的数据绑定、render渲染、angularUI库,过滤器,directive(模板),服务q(defer),http，inject(依赖注入),factory,provider……，等等一系列工具，基本上只要你在做web开发用过的东西，它都有一个。但是这些东西React自身都没有。</p>
+</li>
+<li><p>Angularjs的架构清晰，分工明确，扩展性良好，model，view，controller谁在什么时候做什么事情说的很清楚，angular能够让程序员真正专注于业务逻辑，而且因为对html侵入不大，非常易于和designer协作。整个框架充满了DI的思路，耦合性非常低，对象都是被inject的，也就是说每个对象都可以轻易被替换而不影响其他对象。</p>
+</li>
+<li><p>Angular生产效率高，单向数据流什么的想法非常好，但是写起来太麻烦！我只想变更个很简单的数据还要经过action、dispatcher、reduce、view四步，angular里一行代码就搞定的事情在react里却如此麻烦</p>
+</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>性能 </li>
+<li><p>双向数据绑定是一把双刃剑。随着组件增加，项目越来越复杂，双向数据绑定带来性能问题。<br>双向数据绑定是如何影响性能的？在JavaScript（ES5）中，并没有实现当变量或对象改变时发出通知的功能，Angular的实现方法被叫做“Dirty-checking（脏检查机制）”，通过跟踪数据的改变再动态更新用户界面（UI）。<br>在Angular的作用域中任何操作的执行都会引发Dirty-checking，随着绑定数量的增加性能就会越低。</p>
+</li>
+<li><p>Angular 2.0推翻重做使得目前不宜采用此框架<br>Angular 1.x版本其实是个比较旧的东西了，现在看来有些理念过时了，比如依赖注入、自己独特的模块化，这些东西其实在ES6下已经很好地被解决了。<br>Angular的2.0几乎是一个推翻重做的框架，估计不会有1.X的upgrade方案。所以如果现在新开始的项目采用Angular的话，会是一个很尴尬的时机。同样，如此大的改动似乎也反面印证了1.X并不是那么好。</p>
+</li>
+<li>学习成本高<br>使用Angular需要学习大量的概念，包括但不限于： <ul>
+<li>模块</li>
+<li>控制器</li>
+<li>指令</li>
+<li>作用域</li>
+<li>模板</li>
+<li>链式函数</li>
+<li>过滤器</li>
+<li>依赖注入</li>
+</ul>
+</li>
+</ul>
+<h2 id="React的优缺点"><a href="#React的优缺点" class="headerlink" title="React的优缺点"></a>React的优缺点</h2><ul>
+<li>React伟大之处就在于，提出了Virtual Dom这种新颖的思路，并且这种思路衍生出了React Native，有可能会统一Web/Native开发。在性能方面，由于运用了Virtual Dom技术，Reactjs只在调用setState的时候会更新dom，而且还是先更新Virtual Dom，然后和实际Dom比较，最后再更新实际Dom。这个过程比起Angularjs的bind方式来说，一是更新dom的次数少，二是更新dom的内容少，速度肯定快</li>
+<li><p>ReactJS更关注UI的组件化，和数据的单向更新，提出了FLUX架构的新概念，现在React可以直接用Js ES6语法了，然后通过webpack编译成浏览器兼容的ES5，开发效率上有些优势. </p>
+</li>
+<li><p>React Native生成的App不是运行在WebView上，而是系统原生的UI，React通过jsx生成系统原生的UI，iOS和Android的React UI组件还是比较相似的，大量代码可以复用</p>
+</li>
+<li>维护UI的状态,Angular 里面使用的是 $scope，在 React 里面使用的是 this.setState。 而 React 的好处在于，它更简单直观。所有的状态改变都只有唯一一个入口 this.setState()，Angular 就比较复杂，不知道背后使用了哪些黑魔法。</li>
+<li>同构的JavaScript<br>单页面JS应用程序的最大缺陷在于对搜索引擎的索引有很大限制。React对此有了解决方案。<br>React可以在服务器上预渲染应用再发送到客户端。它可以从预渲染的静态内容中恢复一样的记录到动态应用程序中。<br>因为搜索引擎的爬虫程序依赖的是服务端响应而不是JavaScript的执行，预渲染你的应用有助于搜索引擎优化。</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>React是目标是UI组件，通常可以和其它框架组合使用，目前并不适合单独做一个完整的框架。React 即使配上 redux 的组合，也不能称之一个完整的框架，比如你想用Promise化的AJAX？对不起没有，自己找现成的库去。而且第三方组件远远不如Angular多。目前在大的稳定的项目上采用React的，我也就只知道有Yahoo的Email。React本身只是一个V而已，所以如果是大型项目想要一套完整的框架的话，也许还需要引入Redux和route相关的东西。而Angular在这方面提供的东西比React多多了.</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/21/Angular和React比较/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-AngularJs性能优化总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/21/AngularJs性能优化总结/">AngularJs性能优化的问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/21/AngularJs性能优化总结/" class="archive-article-date">
+  	<time datetime="2017-02-21T09:36:37.858Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、减少双向绑定</strong></p>
+<ul>
+<li>我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更新的数据，使用连续两个冒号即可在watchers列表中将这个值删除，即减少了$digest脏检查循环。</li>
+</ul>
+<p><strong>二、ng-repeat优化</strong></p>
+<ul>
+<li><p>虽然第一种方式减少了脏检查的次数，但是单次绑定的数据毕竟少数，可能加完单次绑定，性能提升并没有太大变化。如果我们的代码中使用了ng-repeat，并且list的数量很大时，我们的性能会有很大下降，在移动端尤为明显。</p>
+</li>
+<li><p>下面是对ng-repeat指令的优化：</p>
+</li>
+<li><p>使用limitTo来减少第一次加载列表元素的数量，以提高初始化页面的速度，也许我们有上百上千条数据要显示i，但是屏幕大小有限，呈现给客户的也就是1280<em>800或者360</em>640大小的屏幕，所以我们可以先加载用户能看到的几个列表。limitTo属性就提供了这样的功能。</p>
+<ul>
+<li>使用track by属性。需要注意的是limitTo和track by一起使用时，track by要放到最后。如果有引入ionic框架，可以使用collection-repeat替代ng-repeat。collection-repeat是ionic框架自己的一套显示list的指令，原理在于不论list有多大，页面最多只有一定数量的item,这个item数量的大小是通过屏幕高度和单个item的高度计算出来的。滑动列表时通过更新item元素的页面内容和位置来呈现所有的items。所以在大数量级的list呈现上，collection-repeat会比ng-repeat性能好很多。但是需要注意的是，由于collection-repeat是通过时时更新滑动位置的item内容来实现的，所以在item内部使用第一个方法的单次绑定方式，滑动后会造成页面混乱的情况。</li>
+</ul>
+</li>
+</ul>
+<p><strong>三、减少HTML页面中的filter</strong></p>
+<ul>
+<li>原因是每当filter执行时，都会走两次$digest cycle，一次是scope中有数据改动，一次是查看是否有更多的改动需要更新数据。当数据量很大时对性能会有很大影响。我们可以在初始化时就格式化好数据，比如赋值到view层之前，在我们的js代码里使用angular提供的$filter provider来预处理我们的数据。</li>
+</ul>
+<p><strong>四、ng-if代替ng-show和ng-hide</strong></p>
+<ul>
+<li>原因是n-if与ng-show/ng-hide的不同之处在于，ng-if在等于false时会把元素从DOM中移除，所以所有绑定在该元素上的handler会一同失效。而ng-show/ng-hide不会移除DOM元素，而是使用css style去隐藏/显示DOM元素，所以handlers会一直存在。</li>
+</ul>
+<p><strong>五、$scope.$apply()和$scope.$digest()</strong></p>
+<ul>
+<li>我们会用到上面两种去执行一次脏检测，刷新页面数据。区别就是$scope.$apply()会从$rootscope开始，深度优先遍历执行$digest循环，而$scope.$digest会从当前scope开始，往下层scope遍历脏检测。如果只是期望当前scope的数据更新，而不涉及到parent $scope，则可以使用$scope.$digest()。</li>
+</ul>
+<p><strong>六、angular animate</strong></p>
+<ul>
+<li>如果我们的项目引入了angular-animate.js的模块，那么在大部分使用了指令的元素上，animate里面的代码都会被执行，不管当前元素是否有应用css动画样式。这对我们页面上如果有大量数据频繁滑动，隐藏显示的时候会有比较明显的性能问题。如果我们对当前scope并没有渐入渐出等动画效果的时候，可以在当前scope初始化时加上$animate.enabled(false);当然，我们也可以对某个元素进行禁止动画的动作：$animate.enabled(element, false);</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/21/AngularJs性能优化总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-git和svn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -368,10 +538,10 @@
 <p><div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div><br>模板里面的内容更改需要的颜色</p>
 <p>G:\my_blog\blog\themes\yilia 下的 ——config.yml   style:  header更改为需要的颜色 </p>
 <p><strong>重新部署后刷新页面可能需要短时间的等待</strong></p>
+<h2 id="关于域名的问题"><a href="#关于域名的问题" class="headerlink" title="关于域名的问题"></a>关于域名的问题</h2></blockquote>
 <h2 id="关于博客遇到的问题"><a href="#关于博客遇到的问题" class="headerlink" title="关于博客遇到的问题"></a>关于博客遇到的问题</h2><h3 id="CNAME（域名映射问题）"><a href="#CNAME（域名映射问题）" class="headerlink" title="CNAME（域名映射问题）"></a>CNAME（域名映射问题）</h3><h3 id="图片问题"><a href="#图片问题" class="headerlink" title="图片问题"></a>图片问题</h3><h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><h3 id="展开全文的404错误"><a href="#展开全文的404错误" class="headerlink" title="展开全文的404错误"></a>展开全文的404错误</h3><h3 id="每次重新上传都要hexo-clean"><a href="#每次重新上传都要hexo-clean" class="headerlink" title="每次重新上传都要hexo clean"></a>每次重新上传都要hexo clean</h3><ul>
 <li><a href="blog.caocaolin.top">CaoLinlin</a></li>
 </ul>
-</blockquote>
 
       
 
@@ -380,17 +550,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -571,10 +730,6 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -656,7 +811,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">努力做更好的自己 &lt;br&gt;&lt;br/&gt; 无论命运给我们开怎样的玩笑 &lt;br&gt;&lt;/br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">声明:博客的内容仅为自己学习所使用&lt;br&gt;&lt;br/&gt;其中包含自己的总结以及借鉴他人的总结&lt;br&gt;&lt;/br&gt;</div>
   	  	
     	</section>
     
