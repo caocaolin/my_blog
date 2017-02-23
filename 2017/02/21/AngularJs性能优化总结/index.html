@@ -18,7 +18,7 @@
 <meta property="og:description" content="一、减少双向绑定
 
 我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更">
-<meta property="og:updated_time" content="2017-02-23T01:22:02.202Z">
+<meta property="og:updated_time" content="2017-02-23T01:27:03.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs性能优化的问题">
 <meta name="twitter:description" content="一、减少双向绑定
@@ -52,7 +52,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/9.jpg" class="js-avatar show" style="width: 100%;height: 100%;opacity: 1;">
+			<img src="/img/me.jpeg" class="js-avatar show" style="width: 100%;height: 100%;opacity: 1;">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">CaoLinlin</a></h1>
@@ -64,7 +64,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/">文章</a></li>
+	        
+				<li><a href="/photo">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -110,13 +112,15 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/img/9.jpg" class="js-avatar">
+				<img src="/img/me.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">CaoLinlin</h1>
 			</hgroup>
 			
 			
+			
+				
 			
 				
 			
@@ -139,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/">文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/photo">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -211,6 +217,9 @@
 <p><strong>六、angular animate</strong></p>
 <ul>
 <li>如果我们的项目引入了angular-animate.js的模块，那么在大部分使用了指令的元素上，animate里面的代码都会被执行，不管当前元素是否有应用css动画样式。这对我们页面上如果有大量数据频繁滑动，隐藏显示的时候会有比较明显的性能问题。如果我们对当前scope并没有渐入渐出等动画效果的时候，可以在当前scope初始化时加上$animate.enabled(false);当然，我们也可以对某个元素进行禁止动画的动作：$animate.enabled(element, false);</li>
+</ul>
+<ul>
+<li><a href="blog.caocaolin.top">CaoLinlin</a></li>
 </ul>
 
       
