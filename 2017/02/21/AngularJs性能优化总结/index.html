@@ -10,20 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、减少双向绑定
 
-我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更新">
+我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJs性能优化的问题">
 <meta property="og:url" content="http://yoursite.com/2017/02/21/AngularJs性能优化总结/index.html">
 <meta property="og:site_name" content="CaoLinlin’s blog">
 <meta property="og:description" content="一、减少双向绑定
 
-我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更新">
-<meta property="og:updated_time" content="2017-02-23T01:16:52.182Z">
+我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更">
+<meta property="og:updated_time" content="2017-02-23T01:22:02.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs性能优化的问题">
 <meta name="twitter:description" content="一、减少双向绑定
 
-我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更新">
+我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更">
   
     <link rel="alternative" href="/atom.xml" title="CaoLinlin’s blog" type="application/atom+xml">
   
@@ -179,7 +179,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、减少双向绑定</strong></p>
+        <a id="more"></a>
+<p><strong>一、减少双向绑定</strong></p>
 <ul>
 <li>我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更新的数据，使用连续两个冒号即可在watchers列表中将这个值删除，即减少了$digest脏检查循环。</li>
 </ul>

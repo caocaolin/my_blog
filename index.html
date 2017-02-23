@@ -171,7 +171,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Angular的优缺点："><a href="#Angular的优缺点：" class="headerlink" title="Angular的优缺点："></a>Angular的优缺点：</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+        <a id="more"></a>
+<h2 id="Angular的优缺点："><a href="#Angular的优缺点：" class="headerlink" title="Angular的优缺点："></a>Angular的优缺点：</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
 <li><p>Angular是一套完整的框架，angular有自带的数据绑定、render渲染、angularUI库,过滤器,directive(模板),服务q(defer),http，inject(依赖注入),factory,provider……，等等一系列工具，基本上只要你在做web开发用过的东西，它都有一个。但是这些东西React自身都没有。</p>
 </li>
 <li><p>Angularjs的架构清晰，分工明确，扩展性良好，model，view，controller谁在什么时候做什么事情说的很清楚，angular能够让程序员真正专注于业务逻辑，而且因为对html侵入不大，非常易于和designer协作。整个框架充满了DI的思路，耦合性非常低，对象都是被inject的，也就是说每个对象都可以轻易被替换而不影响其他对象。</p>
@@ -259,7 +260,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、减少双向绑定</strong></p>
+        <a id="more"></a>
+<p><strong>一、减少双向绑定</strong></p>
 <ul>
 <li>我们知道AngularJS的双向数据绑定是通过为每个需要双向绑定的数据对象添加watchers，一旦某个scope的数据发生了更新，就触发脏检查（$digest），深度优先遍历需所有scope对象的watchers值的old/new value是否发生变化。所以在开发过程中，我们都要小心判断出每个watchers是否有必要。对于只需要更新一次，以后不管数据层如何变化都不需要更新的数据，使用连续两个冒号即可在watchers列表中将这个值删除，即减少了$digest脏检查循环。</li>
 </ul>
