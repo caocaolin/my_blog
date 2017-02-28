@@ -157,6 +157,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端工具深入理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="title-前端工具深入理解"><a href="#title-前端工具深入理解" class="headerlink" title="title:前端工具深入理解"></a>title:前端工具深入理解</h2><h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><blockquote>
+<p>npm (node package manager)是javascript包管理器，它方便使用JavaScript的开发者分享、重用、更新代码。在日常开发中我们最常用的就是使用npm 安装、卸载资源包，一旦npm 安装成功后一切就变得非常简单</p>
+<p>官网：<a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></p>
+</blockquote>
+<p>使用npm 首先你要先安装nodejs，请参考官网进行安装，这里不详细介绍nodejs的安装。</p>
+<h3 id="安装和更新npm-npm-isntall-npm-g"><a href="#安装和更新npm-npm-isntall-npm-g" class="headerlink" title="安装和更新npm: npm isntall npm -g"></a>安装和更新npm: <code>npm isntall npm -g</code></h3><h3 id="更改-npm-的缓存、全局包文件夹"><a href="#更改-npm-的缓存、全局包文件夹" class="headerlink" title="更改 npm 的缓存、全局包文件夹:"></a>更改 npm 的缓存、全局包文件夹:</h3><p>npm 安装完成后，除了会在nodejs 安装目录中多出一个 npm 目录外，还有两个文件夹比较特别，这两个文件夹不在nodejs 的安装目录下（我的是在C:/Users/Administrator/AppData/Roaming/下）</p>
+<ul>
+<li>npm-cache 缓存模块安装目录</li>
+<li>npm 全局模块安装目录</li>
+</ul>
+<p>随着通过npm 安装的包的增加 npm-cache、npm 中的文件将不断地增大，有必要将这两个文件移到别的盘。</p>
+<p><strong>改变npm-cahce的目录</strong></p>
+<p><code>npm config get cache</code></p>
+<p><code>npm config set prefix &quot;D:\Program Files\npm-global</code></p>
+<p><strong>改变npm 的目录</strong></p>
+<p><code>npm config get prefix</code></p>
+<p><code>npm config set cache &quot;D:\Program Files\npm-cache</code></p>
+<p>修改完成后，我们是无法正常使用已经安装的全局包的，需要修改‘PATH’环境变量：“电脑&gt;属性&gt;高级&gt;环境变量”，环境变量需要增加npm 目录的地址。如：D:/Program Files/npm-global </p>
+<p>如果要使修改立即生效，你需要重启电脑</p>
+<p>随着Nodejs的快速发展，npm也成为了前端开发中经常用到的命令。接下来就慢慢地认识并熟悉它吧！</p>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json文件是npm的一种依赖，在团队里面开发，一般会分为开发模式和生产模式(测试模式)。这些模式跟npm有很大的联系。</p>
+<p>一个简单的例子：主要应用的是scripts、dependencies、devdependencies这三个设置</p>
+<pre><code>{
+  &quot;name&quot;: &quot;test&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;test&quot;,
+  &quot;main&quot;: &quot;app.js&quot;,
+  &quot;scripts&quot;: {
+&quot;dev&quot;: &quot;gulp dev &amp;&amp;　node app&quot;,
+&quot;pro&quot;: &quot;node app&quot;
+  },
+  &quot;keywords&quot;: [
+&quot;test&quot;
+  ],
+  &quot;dependencies&quot;: {
+&quot;koa&quot;: &quot;^1.2.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+&quot;gulp&quot;: &quot;^3.9.1&quot;,
+&quot;koa&quot;: &quot;^1.2.0&quot;
+  },
+  &quot;author&quot;: &quot;test&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}
+</code></pre><h2 id="dependencies、devdenpendencies的配置"><a href="#dependencies、devdenpendencies的配置" class="headerlink" title="dependencies、devdenpendencies的配置"></a>dependencies、devdenpendencies的配置</h2><p>dependencies：使用<code>npm install xxx --save</code>时，模块会记录在dependencies里面。</p>
+<p>devdenpendencies：使用<code>npm install xxx --save-dev</code>时、模块会记录在devdenpendencies里面。很多人在git clone 项目之后直接执行“npm i”或“npm install”就可以把项目配置好，这两个命令都是安装在devdenpendencies里面的模块，但是dependencies有什么作用？</p>
+<p>“npm install”模式是开发模式，所以安装模块是devpendencies里面的模块，在开发的时候确实够用了，但是在部署到服务器的时候就不是这个样子了。dependencies（对应生产模式）和 devDependencies（对应开发模式），区别只是在于有没有 gulp 这个模块。</p>
+<p>我们在开发的时候需要用gulp来打包我们的静态文件，那么到了生产模式，也就是部署到了服务器，我们已经不需要gulp来打包了，因为在开发模式把文件打包好，提交代码的时候同步就可以了，所以在部署到服务器的时候我们完全不用多安装gulp这么一个模块了。</p>
+<p>生产模式要执行安装： <code>npm install --production</code></p>
+<p>其实我们实际的开发中，不可能只是两个模板的区别那么简单。一般还会有提到的测试模式，测试模式一般是归于开发模式，即把测试模式需要的模块放到devDependencies里面，目前还没有分离出测试模式的依赖设置。</p>
+<h2 id="scripts的设置"><a href="#scripts的设置" class="headerlink" title="scripts的设置"></a>scripts的设置</h2><p>大部分人在开发时，对于gulp的构建一般就执行<code>gulp</code></p>
+<p>这个命令对于node的server一般运行<br><code>node app</code><br>这样类似的命令，但是这样在开发团队中是不规范的，特别是有些命令加上各种参数。然后不较长的时候就比较麻烦，应该使用“npm run”命令和结合scripts的设置。</p>
+<p>scripts是一个object，那么key就是对应的命令，value就是实际上执行的命令，这种命令再长也不怕了。可以看到上面的package.json里面的scripts，里面有两个命令一本是dev另一个是pro，分别对应开发模式和生产模式。</p>
+<p>开发时：    <code>npm run dev</code></p>
+<p>部署到服务器时： <code>npm run pro</code></p>
+<p>前提是要安装好依赖模块，就是上面说到了两种不同的安装方式</p>
+<p>实际项目有可能不止这两个命令，具体的命令也可能不一样，比如有可能还有测试模式的命令，又比如只需要打包文件而不要http的服务，那么这时候开发模式和生产模式就是不同的gulp命令了</p>
+<h1 id="bower和npm的区别"><a href="#bower和npm的区别" class="headerlink" title="bower和npm的区别"></a>bower和npm的区别</h1><p>npm 是伴随Node.js 出现的一个包管理器，最开始只能支持 Node.js 的模块管理，但是后来， npm 官网经过一次改版，打出的口号是，javascript 的包管理器，所以，其已经不在局限于是Node.js 的模块管理了，已经通用到了所有 js 的包管理工具了，可以说，前后通吃了。</p>
+<p>bower 的话，从一开始，就是专门为前端表现设计的包管理器，一切全部为前端考虑的。npm 和bower 的最大区别，就是 npm 支持嵌套地依赖管理，而 bower只能支持扁平的依赖（嵌套的依赖，由程序员自己解决）。</p>
+<p>嵌套依赖，指的就是，你依赖的软件包，还有它自己的依赖。在服务器环境的时候，这并没什么关系，因为存储空间够大，一切代码都是本地运行，只要解决完依赖就行了。但是到了用户产品的浏览器里，就很成问题了，你不能让用户去下载好几M的js代码，那就太糟糕了。在这个情况下，就需要程序员自己手动解决用到的类库的嵌套依赖问题。比如确保各种各样的插件都依赖同一个版本的jQuery.</p>
+<p>为什么有很多项目 bower 和 npm 都用呢，那是因为要用 bower 管理前端的包，而用 npm 去管理一些后端的包和构建工具，例如，yeoman，grunt，gulp，jshint 等等</p>
+<p>所有的包管理器，都有自己的弊端，要视需要选用对自己的项目最合适的</p>
+<p>原文地址： <code>http://sexywp.com/what-the-difference-of-bower-and-npm.htm?utm_source=tuicool&amp;utm_medium=referral</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/28/前端工具深入理解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-生活记录1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -199,63 +298,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/02/27/生活记录1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-过着" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/过着/">郑州，这些日子的我！</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/27/过着/" class="archive-article-date">
-  	<time datetime="2017-02-27T15:58:38.675Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一次去尝试的时候，有一些胆怯，甚至当时的自己脑海里是一片空白，曾质疑过自己的能力，后来我想可能只是我没有找到一个更好的方法来定位自己。我时时刻刻告诫自己：别人不会拿钱养一个废人，至少我不会！这些天压力倍增，是来自一个女孩的压力!所以我就是想要证明给你看，女孩不一定比男孩差！也许有的人会觉得女孩不需要太努力，但是我不这样认为，正因为是女孩才要付出更多一倍的努力才能与所谓的男人抗衡。</p>
-<p>一个女孩，至少要有自己的工作，无论你挣多挣少，都是自己的劳动所得，多有多的花法，少有少的花法。不依靠别人，你就永远不会被现实狠狠一击。</p>
-<p>前几天听朋友说他好了七年的女友和他分了。我就不明白七年，从高中到现在是怎样的一种舍得？生活在自己的生命中七年的一个人，难道抵不过别人几天地示好？一个人对你好不好，七年你都没发现，你是有多愚蠢！</p>
-<p>回头看看自己，我希望我的选择不是个错误。为了他，我选择留在这里，即便他不是那些人中最优秀的一个，但却是我最珍惜的。事业归事业，家归家，我相信不是只有北上广才能成就人才！只要努力，只要坚持，时间总会给我一个好的答复！</p>
-<ul>
-<li><a href="blog.caocaolin.top">CaoLinlin</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/27/过着/">展开全文 >></a>
         </p>
       
 
