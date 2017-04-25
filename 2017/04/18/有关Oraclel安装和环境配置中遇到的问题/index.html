@@ -15,13 +15,22 @@
 
 
 
+<meta name="description" content="ORA-12154：TNS:监听无法解析指定的标识符问题：
+最近在学习Oracle,在安装的时候遇到很苦逼的问题，ORA-12154：TNS:监听无法解析指定的标识符。于是上网百度看各位大神们的解决办法，都试了个遍也未能解决。最后终于找到了原因，因为我在配置监听和服务器时，环境变量里配的TNS_ADMIN的变量值映射不对，这是需要统一的。所以我在运行lsnrctl start时，监听的程序并不是我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有关Oracle 11g 安装和环境配置中遇到的问题总结">
+<meta property="og:title" content="ORA-12154：TNS:监听无法解析指定的标识符">
 <meta property="og:url" content="http://yoursite.com/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/index.html">
 <meta property="og:site_name" content="CaoLinlin’s blog">
-<meta property="og:updated_time" content="2017-04-18T11:41:55.606Z">
+<meta property="og:description" content="ORA-12154：TNS:监听无法解析指定的标识符问题：
+最近在学习Oracle,在安装的时候遇到很苦逼的问题，ORA-12154：TNS:监听无法解析指定的标识符。于是上网百度看各位大神们的解决办法，都试了个遍也未能解决。最后终于找到了原因，因为我在配置监听和服务器时，环境变量里配的TNS_ADMIN的变量值映射不对，这是需要统一的。所以我在运行lsnrctl start时，监听的程序并不是我">
+<meta property="og:image" content="http://yoursite.com/img/1.PNG">
+<meta property="og:image" content="http://yoursite.com/img/2.PNG">
+<meta property="og:updated_time" content="2017-04-25T03:38:36.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="有关Oracle 11g 安装和环境配置中遇到的问题总结">
+<meta name="twitter:title" content="ORA-12154：TNS:监听无法解析指定的标识符">
+<meta name="twitter:description" content="ORA-12154：TNS:监听无法解析指定的标识符问题：
+最近在学习Oracle,在安装的时候遇到很苦逼的问题，ORA-12154：TNS:监听无法解析指定的标识符。于是上网百度看各位大神们的解决办法，都试了个遍也未能解决。最后终于找到了原因，因为我在配置监听和服务器时，环境变量里配的TNS_ADMIN的变量值映射不对，这是需要统一的。所以我在运行lsnrctl start时，监听的程序并不是我">
+<meta name="twitter:image" content="http://yoursite.com/img/1.PNG">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -43,7 +52,7 @@
 
 
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -53,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>有关Oracle 11g 安装和环境配置中遇到的问题总结 | CaoLinlin’s blog</title>
+<title>ORA-12154：TNS:监听无法解析指定的标识符 | CaoLinlin’s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -251,7 +260,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      有关Oracle 11g 安装和环境配置中遇到的问题总结
+      ORA-12154：TNS:监听无法解析指定的标识符
     </h1>
   
 
@@ -268,7 +277,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="ORA-12154：TNS-监听无法解析指定的标识符"><a href="#ORA-12154：TNS-监听无法解析指定的标识符" class="headerlink" title="ORA-12154：TNS:监听无法解析指定的标识符"></a>ORA-12154：TNS:监听无法解析指定的标识符</h2><p><strong>问题：</strong></p>
+<p>最近在学习Oracle,在安装的时候遇到很苦逼的问题，ORA-12154：TNS:监听无法解析指定的标识符。于是上网百度看各位大神们的解决办法，都试了个遍也未能解决。最后终于找到了原因，因为我在配置监听和服务器时，环境变量里配的TNS_ADMIN的变量值映射不对，这是需要统一的。所以我在运行<code>lsnrctl start</code>时，监听的程序并不是我环境变量里面需要监控的程序。我这里不对前面监听的配置做总结，网上有很多人的博客都写的很清楚，可以百度查到。这里只针对我自己遇到的这个问题做了总结。</p>
+<p><img src="/img/1.PNG" alt="Alt text"><br><img src="/img/2.PNG" alt="Alt text"></p>
+<p><strong>解决办法：</strong><br>就是需要你先配合环境变量，先把环境变量里面的变量值理配置好 ，在配置监听。</p>
+
       
     </div>
     
@@ -276,12 +289,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/">有关Oracle 11g 安装和环境配置中遇到的问题总结</a></p>
+        <p><span>本文标题:</span><a href="/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/">ORA-12154：TNS:监听无法解析指定的标识符</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">CaoLinlin</a></p>
         <p><span>发布时间:</span>2017-04-18, 19:40:36</p>
-        <p><span>最后更新:</span>2017-04-18, 19:41:55</p>
+        <p><span>最后更新:</span>2017-04-25, 11:38:36</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/" title="有关Oracle 11g 安装和环境配置中遇到的问题总结">http://yoursite.com/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/</a>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/" title="ORA-12154：TNS:监听无法解析指定的标识符">http://yoursite.com/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/　　作者: CaoLinlin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -309,7 +322,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ORA-12154：TNS-监听无法解析指定的标识符"><span class="toc-number">1.</span> <span class="toc-text">ORA-12154：TNS:监听无法解析指定的标识符</span></a></li></ol>
         
     </div>
     <style>
@@ -345,7 +358,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"有关Oracle 11g 安装和环境配置中遇到的问题总结　| CaoLinlin’s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ORA-12154：TNS:监听无法解析指定的标识符　| CaoLinlin’s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -361,7 +374,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/04/18/有关Oraclel安装和环境配置中遇到的问题/" data-title="有关Oracle 11g 安装和环境配置中遇到的问题总结" data-url="http://yoursite.com/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/04/18/有关Oraclel安装和环境配置中遇到的问题/" data-title="ORA-12154：TNS:监听无法解析指定的标识符" data-url="http://yoursite.com/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -396,7 +409,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/">有关Oracle 11g 安装和环境配置中遇到的问题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/NodeJs学习/">NodeJs学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/Angular服务理解/">Angualar服务总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/前端工具深入理解/">前端工具深入理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/Angular和React比较/">Angular 和 React 比较</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/AngularJs性能优化总结/">AngularJs性能优化的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/09/git和svn/">git和svn</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/07/git/">git和github以及如何搭建自己的博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/demo/">welcome</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/18/有关Oraclel安装和环境配置中遇到的问题/">ORA-12154：TNS:监听无法解析指定的标识符</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/NodeJs学习/">NodeJs学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/Angular服务理解/">Angualar服务总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/前端工具深入理解/">前端工具深入理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/Angular和React比较/">Angular 和 React 比较</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/AngularJs性能优化总结/">AngularJs性能优化的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/09/git和svn/">git和svn</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/07/git/">git和github以及如何搭建自己的博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/demo/">welcome</a></li></ul>
 
 
 
